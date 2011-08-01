@@ -1,15 +1,17 @@
 alert('starting test script');
 
-var udpapplet = NewUDPApplet('udpapplet');
+var socket = NewUDPApplet('socket');
 
-udpapplet.onOpen = function() {
+socket.onOpen = function() {
     alert('Hello, onOpen!');
 }
 
-updapplet.onReceive = function(data) {
+socket.onReceive = function(data) {
     alert('Hello, onReceive!');
 }
 
-udpapplet.open();
+alert('callback functions set, opening');
 
-udpapplet.send('Hello, Send!');
+socket.open();
+
+socket.send('Hello, Send!');

@@ -1,3 +1,11 @@
+/*
+The value of id should be the global name of the reference to the returned object
+
+i.e.
+
+var socket = NewUDPApplet('socket');
+*/
+
 function NewUDPApplet(id) {
 
     alert('Making new UDPApplet with id='+id);
@@ -26,14 +34,17 @@ function NewUDPApplet(id) {
     
 	// future arguments: host,port?
 	open : function() {
+
+	    alert('Creating UDPApplet via applet-fu');
+	    
 	    applet_fu.run(
 		{
 		    'id':id,
-		    'width':'150',
-		    'height':'25'},
+		    'width':'0',
+		    'height':'0'},
 		{
 		    'code':'UDPApplet.class',
-		    'id':id
+		    'refId':id
 		},
 		'1.4.2',
 		'<p>Java is not available :-(</p>'
