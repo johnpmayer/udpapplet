@@ -8,15 +8,11 @@ public class UDPApplet extends Applet {
 	hello();
     }
     
-    public void paint(Graphics g) {
-	g.drawString("Hello, Graphics!",50,25);
-    }
-    
     public void hello() {
 	
-	String msg = "Hello, Applet!";
+	String msg = "alert - Hello, Applet!";
 	
-	String cmd = "javascript:doAlert(\"" + msg + "\")";
+	String cmd = "javascript:alert(\"" + msg + "\")";
 	
 	try {
 	    getAppletContext().showDocument(new URL(cmd));

@@ -1,0 +1,1 @@
+udp-applet provides a udp socket api to javascript in the browser using a light wrapper around a java applet.
