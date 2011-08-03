@@ -8,7 +8,24 @@ var socket = NewUDPApplet('socket');
 
 function NewUDPApplet(id,port) {
 
-    alert('Making new UDPApplet with id='+id);
+    alert('Creating UDPApplet via applet-fu with id='+id);
+	    
+    applet_fu.run(
+	{
+	    'id':id,
+	    'width':'0',
+	    'height':'0'},
+	{
+	    'code':'UDPApplet.class',
+	    'refId':id,
+	    'host':window.location.hostname,
+	    'port':port
+	},
+	'1.4.2',
+	'<p>Java is not available :-(</p>'
+    );
+    
+    var applet = document.getElementById(id);
     
     return {
 	
@@ -31,30 +48,16 @@ function NewUDPApplet(id,port) {
     	    // application will override
 	    alert(id+".onClose called");
 	},
-    
+	
 	// future arguments: host,port?
 	open : function() {
-
-	    alert('Creating UDPApplet via applet-fu');
-	    
-	    applet_fu.run(
-		{
-		    'id':id,
-		    'width':'0',
-		    'height':'0'},
-		{
-		    'code':'UDPApplet.class',
-		    'refId':id,
-		    'host':window.location.hostname,
-		    'port':port
-		},
-		'1.4.2',
-		'<p>Java is not available :-(</p>'
-	    );
+	    alert("opening...");
+	    applet.open();
 	},
 	
 	send : function(data) {
-	    // ToDo:
+	    alert("sending...");
+	    applet.send(data);
 	}
 	
     };

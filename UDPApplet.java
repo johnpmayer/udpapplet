@@ -15,15 +15,13 @@ public class UDPApplet extends Applet {
 	refId = getParameter("refId");
 	host = getParameter("host");
 	port = Integer.parseInt(getParameter("port"));	
-
+	
 	hello();
-
-	open();
-
+	
     }
-
-    private void open() {
-
+    
+    public void open() {
+	
 	boolean success = false;
 	
 	try {
@@ -45,6 +43,10 @@ public class UDPApplet extends Applet {
 	}
     }
     
+    public void send(String data) {
+	executeAlert("ToDo");
+    }
+
     private void hello() {
 	String msg = "alert - Hello, Applet! ("+refId+":"+host+":"+port+")";
 	executeAlert(msg);
@@ -61,5 +63,7 @@ public class UDPApplet extends Applet {
 	}
 	catch (MalformedURLException me) { }
     }
+    
+    
     
 }
