@@ -1,17 +1,12 @@
-alert('starting test script');
-
-var socket = NewUDPApplet('socket');
+var socket = NewUDPApplet('socket','localhost','8080');
 
 socket.onOpen = function() {
     alert('Hello, onOpen!');
+    socket.send('Hello, Send!');
 }
 
 socket.onReceive = function(data) {
     alert('Hello, onReceive!');
 }
 
-alert('callback functions set, opening');
-
 socket.open();
-
-socket.send('Hello, Send!');

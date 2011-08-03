@@ -6,7 +6,7 @@ i.e.
 var socket = NewUDPApplet('socket');
 */
 
-function NewUDPApplet(id) {
+function NewUDPApplet(id,host,port) {
 
     alert('Making new UDPApplet with id='+id);
     
@@ -44,7 +44,9 @@ function NewUDPApplet(id) {
 		    'height':'0'},
 		{
 		    'code':'UDPApplet.class',
-		    'refId':id
+		    'refId':id,
+		    'host':host,
+		    'port':port
 		},
 		'1.4.2',
 		'<p>Java is not available :-(</p>'
