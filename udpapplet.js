@@ -6,7 +6,7 @@ i.e.
 var socket = NewUDPApplet('socket');
 */
 
-function NewUDPApplet(id,host,port) {
+function NewUDPApplet(id,port) {
 
     alert('Making new UDPApplet with id='+id);
     
@@ -45,7 +45,7 @@ function NewUDPApplet(id,host,port) {
 		{
 		    'code':'UDPApplet.class',
 		    'refId':id,
-		    'host':host,
+		    'host':window.location.hostname,
 		    'port':port
 		},
 		'1.4.2',
