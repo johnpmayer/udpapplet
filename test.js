@@ -1,4 +1,4 @@
-var socket = NewUDPApplet('socket','localhost','8080');
+var socket = NewUDPApplet('socket','8080');
 
 socket.onOpen = function() {
     alert('Hello, onOpen!');
