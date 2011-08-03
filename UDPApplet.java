@@ -35,13 +35,11 @@ public class UDPApplet extends Applet {
 	    
 	    success = true;
 	    
-	} catch (SocketException e) {
+	} catch (Exception e) {
 	    // ToDo: should do .onError
-	    executeAlert(e.getMessage());
-	} catch (UnknownHostException e) {
-	    executeAlert(e.getMessage());
-	}    
-	
+	    executeJavascript(refId+".onError("+e.getMessage()+")");
+	}
+
 	if (success) {
 	    executeJavascript(refId + ".onOpen()");
 	}
