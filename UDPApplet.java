@@ -37,7 +37,7 @@ public class UDPApplet extends Applet {
 	    
 	} catch (Exception e) {
 	    // ToDo: should do .onError
-	    executeJavascript(refId+".onError("+e.getMessage()+")");
+	    executeAlert(e.getMessage());
 	}
 
 	if (success) {
