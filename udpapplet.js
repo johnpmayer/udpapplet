@@ -16,7 +16,8 @@ function NewUDPApplet(id,port) {
 	    'width':'0',
 	    'height':'0'},
 	{
-	    'code':'UDPApplet.class',
+	    'code':'UDPApplet',
+	    'archive':'UDPApplet.jar',
 	    'refId':id,
 	    'host':window.location.hostname,
 	    'port':port
